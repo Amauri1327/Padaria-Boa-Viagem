@@ -2,10 +2,7 @@ package padaria.Bv.ProductController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import padaria.Bv.model.Product.ProductDTO;
 import padaria.Bv.service.ProductService;
 
@@ -30,4 +27,11 @@ public class ProductController {
         ProductDTO dto = service.findById(id);
         return ResponseEntity.ok().body(dto);
     }
+
+    @PostMapping
+    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto){
+        ProductDTO proc = service.insert(dto);
+        return ResponseEntity.ok().build();
+    }
+
 }

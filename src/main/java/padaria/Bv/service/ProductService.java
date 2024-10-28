@@ -30,6 +30,13 @@ public class ProductService {
         return new ProductDTO(entity);
     }
 
-
+    public ProductDTO insert(ProductDTO dto) {
+        Product obj = new Product();
+        obj.setName(dto.name());
+        obj.setDescription(dto.description());
+        obj.setPrice(dto.price());
+        repository.save(obj);
+        return new ProductDTO(obj);
+    }
 
 }
