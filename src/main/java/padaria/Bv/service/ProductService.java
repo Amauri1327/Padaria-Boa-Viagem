@@ -39,4 +39,16 @@ public class ProductService {
         return new ProductDTO(obj);
     }
 
+    public ProductDTO update(Long id, ProductDTO dto) {
+
+        Product prod = repository.findById(id)
+                        .orElseThrow(() -> new EntityNotFoundException("Cliente não encontrado"));
+
+        prod.setName(dto.name());
+        prod.setDescription(dto.description());
+        prod.setPrice(dto.price());
+        repository.save(prod);
+        return new ProductDTO(prod);
+    }
+
 }
