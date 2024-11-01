@@ -1,4 +1,4 @@
-package padaria.Bv.ProductController;
+package padaria.Bv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
