@@ -27,7 +27,7 @@ public class ProductService {
 
     public ProductDTO findById(Long id) {
         Optional<Product> prod = repository.findById(id);
-        Product entity = prod.orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado" + id));
+        Product entity = prod.orElseThrow(() -> new EntityNotFoundException("Produto não encontrado, id: " + id));
         return new ProductDTO(entity);
     }
 

@@ -1,4 +1,4 @@
 package padaria.Bv.model.User;
 
-public record AuthenticationDTO(String Login, String password) {
+public record AuthenticationDTO(String login, String password) {
 }
